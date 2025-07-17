@@ -1,0 +1,288 @@
+body {
+  background-color: #f0f0f0!important;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+  background-color: #292727;
+  height:100vh;
+  width: 17%;
+  float: left;
+  padding-top: 8%;
+  position: fixed;
+}
+
+.sidebar-logo {
+  margin-left: 10%;
+  width: 80%;
+}
+
+.brand-title {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  font-family: 'Berkshire Swash', cursive;
+}
+
+.tag-line {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  text-align: center;
+  font-weight: 300;
+  color: white;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.space {
+  height: 30px;
+}
+
+.links {
+  width: 70%;
+  margin-left: 15%;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  color: white;
+}
+
+.links a {
+  color: white;
+}
+
+.links a:hover {
+  font-size: 11px;
+  text-decoration: none;
+  color: white;
+}
+
+
+.tees-grid {
+  float: right;
+  width: 83%;
+}
+
+.page-bar {
+    height: 100px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    font-size: 11px;
+
+}
+
+.nav-input {
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(145,145,145,0.45); 
+  height: 35px;
+  width: 75px;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 12px;
+
+}
+
+.page-bar a:hover {
+  text-decoration: none;
+}
+
+.nav {
+
+}
+
+.row {
+  margin-bottom: 30px;
+}
+.tees {
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.tee-card {
+  margin: auto;
+  height: 220px;
+  width: 220px;
+  padding: 5px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 2px 0 rgba(145,145,145,0.45);
+  border-radius: 2px;
+}
+
+.tee-img {
+  max-height: 210px;
+  max-width: 210px;
+}
+
+@media (min-width: 901px) and (max-width: 1150px) {
+
+
+  .sidebar {
+    width: 25%;
+  }
+
+  .tees-grid {
+    width: 75%;
+  }
+
+  .tee-card {
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+  }
+
+  .tee-img {
+    max-height: 140px;
+    max-width: 140px;
+  }
+
+  .tees {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
+
+
+
+@media (min-width: 1151px) and (max-width: 1300px) {
+
+  .sidebar {
+    width: 20%;
+  }
+
+  .tees-grid {
+    width: 80%;
+  }
+
+ .tee-card {
+    height: 200px;
+    width: 200px;
+    padding: 5px;
+  }
+
+  .tee-img {
+    max-height: 190px;
+    max-width: 190px;
+  }
+
+  .tees {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+
+}
+
+
+
+
+@media (min-width:768px) and (max-width:900px) {
+
+.sidebar {
+  background-color: #292727;
+  height:300px;
+  width: 100%;
+  float: none;
+  padding-top: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.sidebar-logo {
+  margin: auto;
+  height: 100px;
+  width:100px;
+}
+
+.link-text {
+  display: none;
+}
+
+.tees-grid {
+  float: none;
+  width: 100%;
+}
+
+.links {
+  margin: auto;
+  text-align: center;
+}
+
+.link-img {
+  margin-right: 20px;
+}
+
+  .tee-card {
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+  }
+
+  .tee-img {
+    max-height: 140px;
+    max-width: 140px;
+  }
+
+.row {
+  margin-bottom: 20px;
+}
+
+}
+
+
+@media (max-width:767px) {
+
+.sidebar {
+  background-color: #292727;
+  height:300px;
+  width: 100%;
+  float: none;
+  padding-top: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.sidebar-logo {
+  margin: auto;
+  height: 100px;
+  width:100px;
+}
+
+.link-text {
+  display: none;
+}
+
+.tees-grid {
+  float: none;
+  width: 100%;
+}
+
+.links {
+  margin: auto;
+  text-align: center;
+}
+
+.link-img {
+  margin-right: 20px;
+}
+
+.tee-card {
+  margin-bottom: 20px;
+}
+
+.row {
+  margin-bottom: 0px;
+}
+
+}
+
+
+@media (max-width:767px) {
+  .tees {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

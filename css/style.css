@@ -1,0 +1,493 @@
+body {
+  background-color: #E4E9EE!important;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+  background-color: #292727;
+  height:100vh;
+  width: 17%;
+  float: left;
+  padding-top: 8%;
+  position: fixed;
+}
+
+.sidebar-logo {
+  margin-left: 10%;
+  width: 80%;
+}
+
+.brand-title {
+  font-size: 24px;
+  color: #000;
+  text-align: center;
+  font-family: 'Berkshire Swash', cursive;
+}
+
+.tag-line {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  text-align: center;
+  font-weight: 300;
+  color: #111; /*
+  width: 80%;
+  margin-left: 10%; */
+}
+
+.space {
+  height: 30px;
+}
+
+.links {
+  width: 70%;
+  margin-left: 15%;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  color: white;
+}
+
+.links a {
+  color: white;
+}
+
+.links a:hover {
+  font-size: 11px;
+  text-decoration: none;
+  color: white;
+}
+
+
+.tees-grid {
+  /* float: right; */
+  width: 83%;
+}
+
+.page-bar {
+    /*background: #f7f7f8;*/
+    height: 100px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    font-size: 11px;
+
+}
+
+.nav-input {
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(145,145,145,0.45); 
+  height: 35px;
+  width: 75px;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 12px;
+
+}
+
+.page-bar a:hover {
+  text-decoration: none;
+}
+
+.nav {
+
+}
+
+.tees {
+    display:flex;
+     justify-content:space-around;
+    flex-wrap:wrap;
+  margin-top: 10px; /*
+  padding-left: 75px;
+  padding-right: 75px; */
+}
+/*
+.tee-card {
+  margin: auto;
+  height: 320px;
+  width: 320px;
+  padding: 5px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 2px 0 rgba(145,145,145,0.45);
+  border-radius: 8px;
+}
+
+.tee-img {
+  max-height: 96%;
+  max-width: 96%;
+} */
+
+.pg-details {
+  font-size: 10px;
+  margin-bottom: 5px;
+  color: #999;
+}
+
+.pg-boxes {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.pg-box {
+  transition: box-shadow .3s;
+  display: inherit;
+  height: 27px;
+  width: 27px;
+  background: #292727;
+  box-shadow: 0 1px 1px 0 rgba(125,125,125,0.50);
+  border-radius: 3px;
+  line-height: 27px;
+  padding: 0px;
+  font-size: 10px;
+  margin-right: 6px;
+  color: #fff;
+}
+
+.pg-box:hover {
+  /*
+  height: 30px;
+  width: 30px;
+  box-shadow: 0 3px 10px 0 rgba(125,125,125,0.50);  
+  */
+
+  border-radius: 5px;
+  color: #fff!important;
+  font-size: 12px;
+  line-height: 25px;
+
+
+}
+
+.pg-box a {
+  color: #fff;
+}
+
+.pg-box-curr {
+  display: inherit;
+  height: 27px;
+  width: 27px;
+  box-shadow: 0 1px 1px 0 rgba(125,125,125,0.50);
+  border-radius: 3px;
+  line-height: 27px;
+  padding: 0px;
+  font-size: 10px;
+  margin-right: 6px;
+  color: #fff;  
+  background: #03A9F4;
+  color: white!important; 
+}
+
+.tee-card:hover {
+   transform: scale(1.25);
+}
+
+@media (min-width: 1440px) {
+
+  .sidebar {
+    width: 20%;
+  }
+
+.row {
+  margin-bottom: 30px;
+}
+
+
+  .tees-grid {
+      margin:auto;
+    width: 1200px;
+  }
+
+.tee-card {
+    background:white;
+    margin:auto;
+    display:flex;
+    justify-content: center; 
+    align-items: center;
+    height: 270px;
+    width: 270px;
+    border-radius:8px;
+    box-shadow: 0px 0px 10px #ddd;
+    margin-bottom:24px;
+  }
+
+  .tee-img {
+    margin:auto;
+    max-height: 256px;
+    max-width: 256px;
+  }
+  
+  .card-width {
+      width:25%;
+  }
+
+/*
+  .tees { 
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+*/
+
+
+}
+
+@media (min-width: 1080px) and (max-width: 1439px) {
+
+
+  .sidebar {
+    width: 25%;
+  }
+
+  .tees-grid {
+    width: 992px;
+    margin:auto;
+  }
+
+  .tee-card {
+    background:white;
+    margin:auto;
+    display:flex;
+    justify-content: center; 
+    align-items: center;
+    height: 224px;
+    width: 224px;
+    border-radius:8px;
+    box-shadow: 0px 0px 10px #ddd;
+     margin-bottom:24px;
+  }
+
+  .tee-img {
+    max-height: 208;
+    max-width: 208px;
+    margin:auto;
+  }
+  
+   .card-width {
+      width:25%;
+  }
+
+.row {
+  margin-bottom: 20px;
+}
+
+
+/*
+  .tees {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+*/
+}
+
+
+/*
+
+@media (min-width: 1151px) and (max-width: 1300px) {
+
+  .sidebar {
+    width: 20%;
+  }
+
+  .tees-grid {
+    width: 100%;
+    padding-left:10%;
+    padding-right:10%;
+  }
+
+ .tee-card {
+    height: 200px;
+    width: 200px;
+    padding: 5px;
+  }
+
+  .tee-img {
+    max-height: 190px;
+    max-width: 190px;
+  }
+
+  .tees {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+
+} */
+
+
+@media (min-width:900px) and (max-width:1079px) {
+
+.tees-grid {
+  float: none;
+  width: 88%;
+  margin:auto;
+}
+
+.row {
+    justify-content:space-between;
+}
+
+.card-width {
+      width:30%;
+  }
+
+.tee-card {
+    background:white;
+    margin:auto;
+    display:flex;
+    justify-content: center; 
+    align-items: center;
+    height: 256px;
+    width: 256px;
+    border-radius:8px;
+    box-shadow: 0px 0px 10px #ddd;
+    margin-bottom:20px;
+  }
+
+  .tee-img {
+    margin:auto;
+    max-height: 240px;
+    max-width: 240px;
+  }
+  
+
+}
+
+@media (min-width:720px) and (max-width:899px) {
+
+.sidebar {
+  background-color: #292727;
+  height:300px;
+  width: 100%;
+  float: none;
+  padding-top: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.sidebar-logo {
+  margin: auto;
+  height: 100px;
+  width:100px;
+}
+
+.link-text {
+  display: none;
+}
+
+.tees-grid {
+  float: none;
+  width: 88%;
+  margin:auto;
+}
+
+ .card-width {
+      width:50%;
+  }
+
+
+.links {
+  margin: auto;
+  text-align: center;
+}
+
+.link-img {
+  margin-right: 20px;
+}
+
+ .tee-card {
+    background:white;
+    margin:auto;
+    display:flex;
+    justify-content: center; 
+    align-items: center;
+    height: 320px;
+    width: 320px;
+    border-radius:8px;
+    box-shadow: 0px 0px 10px #ddd;
+    margin-bottom:20px;
+  }
+
+  .tee-img {
+    margin:auto;
+    max-height: 304px;
+    max-width: 304px;
+  }
+  
+/*
+.row {
+  margin-bottom: 20px;
+} */
+
+}
+
+
+@media (max-width:719px) {
+
+.sidebar {
+  background-color: #292727;
+  height:300px;
+  width: 100%;
+  float: none;
+  padding-top: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.sidebar-logo {
+  margin: auto;
+  height: 100px;
+  width:100px;
+}
+
+.link-text {
+  display: none;
+}
+
+ .card-width {
+      width:100%;
+  }
+
+
+.tees-grid {
+  float: none;
+  width: 100%;
+}
+
+.links {
+  margin: auto;
+  text-align: center;
+}
+
+.link-img {
+  margin-right: 12px;
+}
+
+.tee-card {
+    background:white;
+    margin:auto;
+    display:flex;
+    justify-content: center; 
+    align-items: center;
+    height: 320px;
+    width: 320px;
+    border-radius:8px;
+    box-shadow: 0px 0px 10px #ddd;
+    margin-bottom:20px;
+  }
+
+  .tee-img {
+    max-height: 304px;
+    max-width: 304px;
+  }
+    
+/*    
+  .tees {
+    padding-left: 20px;
+    padding-right: 20px;
+  } */
+
+.row {
+  margin-bottom: 0px;
+}
+
+}
