@@ -3,7 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image Gallery with Pagination</title>
+  <title>Advaita &amp; Nonduality Quote Designs | Nondualitee</title>
+  <meta name="description" content="Explore Nondualitee’s collection of Advaita and nonduality quote artwork inspired by teachers including Ramana Maharshi and Nisargadatta." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nondualitee" />
+  <meta property="og:title" content="Advaita &amp; Nonduality Quote Designs | Nondualitee" />
+  <meta property="og:description" content="Explore quote artwork inspired by Advaita Vedanta and nonduality." />
+  <meta property="og:url" content="https://nondualitee.github.io/" />
+  <meta property="og:image" content="https://nondualitee.github.io/images/ramana-1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Advaita &amp; Nonduality Quote Designs | Nondualitee" />
+  <meta name="twitter:description" content="Explore quote artwork inspired by Advaita Vedanta and nonduality." />
+  <meta name="twitter:image" content="https://nondualitee.github.io/images/ramana-1.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Nondualitee",
+    "url": "https://nondualitee.github.io/",
+    "description": "A collection of Advaita and nonduality quote artwork."
+  }
+  </script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -50,7 +70,7 @@
       gap: 0.5rem;
     }
 
-    .pagination button {
+    .pagination a {
       padding: 0.5rem 1rem;
       font-size: 1rem;
       background: #2c3e50;
@@ -60,13 +80,19 @@
       cursor: pointer;
     }
 
-    .pagination button.active {
+    .pagination a.active {
       background: #1abc9c;
     }
 
-    .pagination button:disabled {
+    .pagination a[aria-disabled="true"] {
       background: #aaa;
       cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .pagination a:focus-visible {
+      outline: 3px solid #1abc9c;
+      outline-offset: 3px;
     }
 
     footer {
@@ -80,19 +106,22 @@
 <body>
   <div class="" style = "background:#000;width:100%; height:80px; display: flex; justify-content: center; align-items: center;" class="">
           <div style="">
-            <div style="display:inline-block;height:40px;width:50px;" ><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://www.instagram.com/advaita_tees/" target="_blank"> <img class="" src="images/insta-icon.svg"></a></div> </div>
-            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://facebook.com/nondualitee" target="_blank"> <img class="" src="images/fb-icon.svg"></a> </div></div>
-            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://twitter.com/nondualitee" target="_blank"> <img class="" src="images/twitter-icon.svg"></a> </div></div>
-            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://www.quora.com/profile/Advaita-Tees" target="_blank"> <img class="" src="images/quora-icon.svg"></a> </div></div>       
-            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://nondualitee.threadless.com" target="_blank"> <img class="" src="images/shop-icon-1.svg"></a> </div> </div>
-            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://nondualitee.blinkstore.in" target="_blank"> <img class="" src="images/shop-icon-2.svg"></a>  </div></div>
+            <div style="display:inline-block;height:40px;width:50px;" ><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://www.instagram.com/advaita_tees/" target="_blank" rel="noopener noreferrer" aria-label="Nondualitee on Instagram"> <img src="images/insta-icon.svg" alt=""></a></div> </div>
+            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://facebook.com/nondualitee" target="_blank" rel="noopener noreferrer" aria-label="Nondualitee on Facebook"> <img src="images/fb-icon.svg" alt=""></a> </div></div>
+            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://twitter.com/nondualitee" target="_blank" rel="noopener noreferrer" aria-label="Nondualitee on X"> <img src="images/twitter-icon.svg" alt=""></a> </div></div>
+            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://www.quora.com/profile/Advaita-Tees" target="_blank" rel="noopener noreferrer" aria-label="Nondualitee on Quora"> <img src="images/quora-icon.svg" alt=""></a> </div></div>
+            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://nondualitee.threadless.com" target="_blank" rel="noopener noreferrer" aria-label="Shop Nondualitee on Threadless"> <img src="images/shop-icon-1.svg" alt=""></a> </div> </div>
+            <div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://nondualitee.blinkstore.in" target="_blank" rel="noopener noreferrer" aria-label="Shop Nondualitee on Blinkstore"> <img src="images/shop-icon-2.svg" alt=""></a>  </div></div>
         </div>
       </div> <br>
-  <h1>Nondualitee</h1>
-  <p> A Collection of advaita quotes and images for your tee </p>
+  <main>
+    <h1>Advaita and Nonduality Quote Designs</h1>
+    <p>Explore a gallery of quote artwork inspired by Advaita Vedanta and nonduality. Browse designs associated with teachers including Ramana Maharshi, Nisargadatta Maharaj, and Atmananda Krishna Menon, then visit the shops to find available tees.</p>
+    <p class="shop-links"><a href="https://nondualitee.threadless.com" target="_blank" rel="noopener noreferrer">Shop Nondualitee on Threadless</a> · <a href="https://nondualitee.blinkstore.in" target="_blank" rel="noopener noreferrer">Shop Nondualitee on Blinkstore</a></p>
+  </main>
 
   <div class="gallery" id="gallery"></div>
-  <div class="pagination" id="pagination"></div>
+  <nav class="pagination" id="pagination" aria-label="Gallery pages"></nav>
 
   <footer>
     © 2025 Nondualitee. Hosted on GitHub Pages.
@@ -622,6 +651,40 @@
     let currentPage = 1;
     const itemsPerPage = 12;
 
+    function describeArtwork(filename) {
+      const collection = filename.toLowerCase().split(/[ -]/)[0];
+      const teachers = {
+        atmananda: "Atmananda Krishna Menon",
+        nisarga: "Nisargadatta Maharaj",
+        ramana: "Ramana Maharshi",
+        ashtv: "the Ashtavakra tradition",
+        shankara: "Adi Shankaracharya"
+      };
+      const teacher = teachers[collection];
+      return teacher
+        ? `Advaita and nonduality quote artwork associated with ${teacher}`
+        : "Advaita and nonduality quote artwork";
+    }
+
+    function updatePageMetadata() {
+      document.title = currentPage === 1
+        ? "Advaita & Nonduality Quote Designs | Nondualitee"
+        : `Advaita Quote Gallery — Page ${currentPage} | Nondualitee`;
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+      }
+      canonical.href = currentPage === 1
+        ? "https://nondualitee.github.io/"
+        : `https://nondualitee.github.io/?page=${currentPage}`;
+      document.querySelector('meta[property="og:url"]').content = canonical.href;
+      document.querySelector("h1").textContent = currentPage === 1
+        ? "Advaita and Nonduality Quote Designs"
+        : `Advaita and Nonduality Quote Designs — Page ${currentPage}`;
+    }
+
     function renderGallery() {
       gallery.classList.remove("visible");
       gallery.innerHTML = "";
@@ -633,7 +696,9 @@
       items.forEach(filename => {
         const img = document.createElement("img");
         img.src = `images/${filename}`;
-        img.alt = "Gallery image";
+        img.alt = describeArtwork(filename);
+        img.loading = "lazy";
+        img.decoding = "async";
         gallery.appendChild(img);
       });
 
@@ -654,35 +719,32 @@
       }
 
       // ← Prev
-      const prev = document.createElement("button");
-      prev.textContent = "←";
-      prev.disabled = currentPage === 1;
-      prev.onclick = () => {
-        currentPage--;
-        renderGallery();
-      };
+      const prev = document.createElement("a");
+      prev.textContent = "← Previous";
+      prev.href = currentPage > 2 ? `?page=${currentPage - 1}` : "/";
+      prev.setAttribute("aria-label", "Previous gallery page");
+      if (currentPage === 1) prev.setAttribute("aria-disabled", "true");
       pagination.appendChild(prev);
 
       // Page numbers
       for (let i = startPage; i <= endPage; i++) {
-        const btn = document.createElement("button");
+        const btn = document.createElement("a");
         btn.textContent = i;
-        if (i === currentPage) btn.classList.add("active");
-        btn.onclick = () => {
-          currentPage = i;
-          renderGallery();
-        };
+        btn.href = i === 1 ? "/" : `?page=${i}`;
+        btn.setAttribute("aria-label", `Gallery page ${i}`);
+        if (i === currentPage) {
+          btn.classList.add("active");
+          btn.setAttribute("aria-current", "page");
+        }
         pagination.appendChild(btn);
       }
 
       // → Next
-      const next = document.createElement("button");
-      next.textContent = "→";
-      next.disabled = currentPage === totalPages;
-      next.onclick = () => {
-        currentPage++;
-        renderGallery();
-      };
+      const next = document.createElement("a");
+      next.textContent = "Next →";
+      next.href = currentPage < totalPages ? `?page=${currentPage + 1}` : `?page=${totalPages}`;
+      next.setAttribute("aria-label", "Next gallery page");
+      if (currentPage === totalPages) next.setAttribute("aria-disabled", "true");
       pagination.appendChild(next);
     }
 
@@ -690,15 +752,25 @@
       const totalPages = Math.ceil(imageList.length / itemsPerPage);
       if (e.key === "ArrowRight" && currentPage < totalPages) {
         currentPage++;
+        window.history.pushState({}, "", `?page=${currentPage}`);
         renderGallery();
+        updatePageMetadata();
       } else if (e.key === "ArrowLeft" && currentPage > 1) {
         currentPage--;
+        window.history.pushState({}, "", currentPage === 1 ? "/" : `?page=${currentPage}`);
         renderGallery();
+        updatePageMetadata();
       }
     });
 
     window.addEventListener("DOMContentLoaded", () => {
+      const requestedPage = Number(new URLSearchParams(window.location.search).get("page"));
+      const totalPages = Math.ceil(imageList.length / itemsPerPage);
+      currentPage = Number.isInteger(requestedPage) && requestedPage >= 1 && requestedPage <= totalPages
+        ? requestedPage
+        : 1;
       renderGallery();
+      updatePageMetadata();
     });
   </script>
 </body>
