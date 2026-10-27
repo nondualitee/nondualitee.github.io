@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advaita &amp; Nonduality Quote Designs | Nondualitee</title>
+  <title>Advaita Quotes - Design and Tees</title>
   <meta name="description" content="Explore Nondualitee’s collection of Advaita and nonduality quote artwork inspired by teachers including Ramana Maharshi and Nisargadatta." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Nondualitee" />
-  <meta property="og:title" content="Advaita &amp; Nonduality Quote Designs | Nondualitee" />
+  <meta property="og:title" content="Advaita Quotes - Design and Tees" />
   <meta property="og:description" content="Explore quote artwork inspired by Advaita Vedanta and nonduality." />
   <meta property="og:url" content="https://nondualitee.github.io/" />
   <meta property="og:image" content="https://nondualitee.github.io/images/ramana-1.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Advaita &amp; Nonduality Quote Designs | Nondualitee" />
+  <meta name="twitter:title" content="Advaita Quotes - Design and Tees" />
   <meta name="twitter:description" content="Explore quote artwork inspired by Advaita Vedanta and nonduality." />
   <meta name="twitter:image" content="https://nondualitee.github.io/images/ramana-1.jpg" />
   <script type="application/ld+json">
@@ -35,6 +35,17 @@
 
     h1 {
       color: #2c3e50;
+    }
+
+    .subheading {
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    @media (max-width: 600px) {
+      .subheading {
+        max-width: 88%;
+      }
     }
 
     .gallery {
@@ -78,6 +89,7 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .pagination a.active {
@@ -114,8 +126,8 @@
         </div>
       </div> <br>
   <main>
-    <h1>Advaita and Nonduality Quote Designs</h1>
-    <p>Explore a gallery of quote artwork inspired by Advaita Vedanta and nonduality. Browse designs associated with teachers including Ramana Maharshi, Nisargadatta Maharaj, and Atmananda Krishna Menon, then visit the shops to find available tees.</p>
+    <h1>Advaita Quotes - Design and Tees</h1>
+    <p class="subheading">Explore a gallery of quote artwork inspired by Advaita Vedanta and nonduality. Browse designs associated with teachers including Ramana Maharshi, Nisargadatta Maharaj, and Atmananda Krishna Menon, then visit the shops to find available tees.</p>
   </main>
 
   <div class="gallery" id="gallery"></div>
@@ -665,9 +677,7 @@
     }
 
     function updatePageMetadata() {
-      document.title = currentPage === 1
-        ? "Advaita & Nonduality Quote Designs | Nondualitee"
-        : `Advaita Quote Gallery — Page ${currentPage} | Nondualitee`;
+      document.title = "Advaita Quotes - Design and Tees";
       let canonical = document.querySelector('link[rel="canonical"]');
       if (!canonical) {
         canonical = document.createElement("link");
@@ -678,9 +688,7 @@
         ? "https://nondualitee.github.io/"
         : `https://nondualitee.github.io/?page=${currentPage}`;
       document.querySelector('meta[property="og:url"]').content = canonical.href;
-      document.querySelector("h1").textContent = currentPage === 1
-        ? "Advaita and Nonduality Quote Designs"
-        : `Advaita and Nonduality Quote Designs — Page ${currentPage}`;
+      document.querySelector("h1").textContent = "Advaita Quotes - Design and Tees";
     }
 
     function renderGallery() {
@@ -716,9 +724,9 @@
         startPage = Math.max(1, endPage - windowSize + 1);
       }
 
-      // ← Prev
+      // Previous page
       const prev = document.createElement("a");
-      prev.textContent = "← Previous";
+      prev.textContent = "←";
       prev.href = currentPage > 2 ? `?page=${currentPage - 1}` : "/";
       prev.setAttribute("aria-label", "Previous gallery page");
       if (currentPage === 1) prev.setAttribute("aria-disabled", "true");
@@ -737,9 +745,9 @@
         pagination.appendChild(btn);
       }
 
-      // → Next
+      // Next page
       const next = document.createElement("a");
-      next.textContent = "Next →";
+      next.textContent = "→";
       next.href = currentPage < totalPages ? `?page=${currentPage + 1}` : `?page=${totalPages}`;
       next.setAttribute("aria-label", "Next gallery page");
       if (currentPage === totalPages) next.setAttribute("aria-disabled", "true");
