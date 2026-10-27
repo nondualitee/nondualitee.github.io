@@ -40,7 +40,6 @@
     			<div class="space"></div>
     			<div class="links">
     				<a href="https://nondualitee.threadless.com" target="_blank"> <img class="link-img" src="images/shop-icon-1.svg"> &nbsp;&nbsp;&nbsp; <span class="link-text"> SHOP (US) </span> </a> <br class="link-text"><br class="link-text">
-    				<a href="https://nondualitee.blinkstore.in" target="_blank"> <img class="link-img" src="images/shop-icon-2.svg"> &nbsp;&nbsp;&nbsp; <span class="link-text"> SHOP (INDIA) </span> </a> <br class="link-text"><br class="link-text">
     				<a href="https://www.instagram.com/advaita_tees/" target="_blank"> <img class="link-img" src="images/insta-icon.svg"> &nbsp;&nbsp; <span class="link-text"> FOLLOW ON INSTAGRAM </span> </a> <br class="link-text"><br class="link-text">
     				<a href="https://facebook.com/nondualitee" target="_blank"> <img class="link-img" src="images/fb-icon.svg"> &nbsp;&nbsp; <span class="link-text"> FOLLOW ON FACEBOOK </span> </a> <br class="link-text"><br class="link-text"> 
     				<a href="https://twitter.com/nondualitee" target="_blank"> <img class="link-img" src="images/twitter-icon.svg"> &nbsp;&nbsp; <span class="link-text">FOLLOW ON TWITTER </span></a> <br class="link-text"><br class="link-text">
@@ -54,7 +53,6 @@
     				<div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://twitter.com/nondualitee" target="_blank"> <img class="" src="images/twitter-icon.svg"></a> </div></div>
     				<div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://www.quora.com/profile/Advaita-Tees" target="_blank"> <img class="" src="images/quora-icon.svg"></a> </div></div>  			
     				<div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://nondualitee.threadless.com" target="_blank"> <img class="" src="images/shop-icon-1.svg"></a> </div> </div>
-    				<div style="display:inline-block;height:40px;width:50px;"><div style="display:flex;height:100%;width:100%;justify-content: center; align-items: center;"> <a href="https://nondualitee.blinkstore.in" target="_blank"> <img class="" src="images/shop-icon-2.svg"></a>  </div></div>
 				</div>
 			</div> <br>
             
