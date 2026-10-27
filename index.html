@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet" />
   <title>Advaita &amp; Nonduality Quotes - Design and Tees</title>
   <meta name="description" content="Explore Nondualitee’s collection of Advaita and nonduality quote artwork inspired by teachers including Ramana Maharshi and Nisargadatta." />
   <meta property="og:type" content="website" />
@@ -35,7 +38,8 @@
 
     h1 {
       color: #2c3e50;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
     .subheading {
@@ -82,6 +86,37 @@
       .subheading {
         max-width: 88%;
       }
+    }
+
+    .teacher-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0 1rem;
+      margin: 3rem auto 0.5rem;
+    }
+
+    .teacher-filters button {
+      padding: 0.45rem 0.75rem;
+      border: 1px solid #cbd2d9;
+      border-radius: 999px;
+      background: #fff;
+      color: #2c3e50;
+      font: inherit;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    .teacher-filters button[aria-selected="true"] {
+      border-color: #2c3e50;
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    .teacher-filters button:focus-visible {
+      outline: 3px solid #1abc9c;
+      outline-offset: 3px;
     }
 
     .gallery {
@@ -203,7 +238,14 @@
     <p class="subheading">Explore a gallery of quote artwork inspired by Advaita Vedanta and nonduality. Browse designs associated with teachers including Ramana Maharshi, Nisargadatta Maharaj, and Atmananda Krishna Menon, then visit the shops to find available tees.</p>
   </main>
 
-  <div class="gallery" id="gallery"></div>
+  <div class="teacher-filters" role="tablist" aria-label="Filter quote cards by teacher">
+    <button type="button" role="tab" id="filter-all" aria-controls="gallery" aria-selected="true" tabindex="0" data-filter="all">All</button>
+    <button type="button" role="tab" id="filter-ramana" aria-controls="gallery" aria-selected="false" tabindex="-1" data-filter="ramana">Ramana Maharshi</button>
+    <button type="button" role="tab" id="filter-nisargadatta" aria-controls="gallery" aria-selected="false" tabindex="-1" data-filter="nisarga">Nisargadatta Maharaj</button>
+    <button type="button" role="tab" id="filter-atmananda" aria-controls="gallery" aria-selected="false" tabindex="-1" data-filter="atmananda">Atmananda Krishna Menon</button>
+  </div>
+
+  <div class="gallery" id="gallery" role="tabpanel" aria-labelledby="filter-all" tabindex="0"></div>
   <nav class="pagination" id="pagination" aria-label="Gallery pages"></nav>
 
   <footer>
@@ -736,9 +778,35 @@
 
     const gallery = document.getElementById("gallery");
     const pagination = document.getElementById("pagination");
+    const filterTabs = [...document.querySelectorAll('[role="tab"][data-filter]')];
 
     let currentPage = 1;
+    let activeFilter = "all";
     const itemsPerPage = 12;
+
+    function getFilteredImages() {
+      return activeFilter === "all"
+        ? imageList
+        : imageList.filter(filename => filename.toLowerCase().startsWith(`${activeFilter}-`));
+    }
+
+    function getPageUrl(page) {
+      const params = new URLSearchParams();
+      if (activeFilter !== "all") params.set("teacher", activeFilter);
+      if (page > 1) params.set("page", page);
+      const query = params.toString();
+      return query ? `/?${query}` : "/";
+    }
+
+    function syncFilterTabs() {
+      filterTabs.forEach(tab => {
+        const selected = tab.dataset.filter === activeFilter;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      const selectedTab = filterTabs.find(tab => tab.dataset.filter === activeFilter);
+      gallery.setAttribute("aria-labelledby", selectedTab.id);
+    }
 
     const artworkAltText = {
       "ashtv-git-1.jpg": "Ashtavakra Gita quote card: ‘Clinging to nothing, you become still,’ with a simple illustration of awareness above the world.",
@@ -1281,9 +1349,7 @@
         canonical.rel = "canonical";
         document.head.appendChild(canonical);
       }
-      canonical.href = currentPage === 1
-        ? "https://nondualitee.github.io/"
-        : `https://nondualitee.github.io/?page=${currentPage}`;
+      canonical.href = `https://nondualitee.github.io${getPageUrl(currentPage)}`;
       document.querySelector('meta[property="og:url"]').content = canonical.href;
       document.querySelector("h1").textContent = "Advaita Quotes - Design and Tees";
     }
@@ -1292,9 +1358,10 @@
       gallery.classList.remove("visible");
       gallery.innerHTML = "";
 
+      const filteredImages = getFilteredImages();
       const start = (currentPage - 1) * itemsPerPage;
       const end = start + itemsPerPage;
-      const items = imageList.slice(start, end);
+      const items = filteredImages.slice(start, end);
 
       items.forEach(filename => {
         const img = document.createElement("img");
@@ -1306,12 +1373,13 @@
       });
 
       setTimeout(() => gallery.classList.add("visible"), 50);
-      renderPagination(imageList.length);
+      renderPagination(filteredImages.length);
     }
 
     function renderPagination(totalItems) {
       pagination.innerHTML = "";
       const totalPages = Math.ceil(totalItems / itemsPerPage);
+      if (totalPages <= 1) return;
       const windowSize = 5;
       let startPage = Math.max(1, currentPage - Math.floor(windowSize / 2));
       let endPage = startPage + windowSize - 1;
@@ -1324,7 +1392,7 @@
       // Previous page
       const prev = document.createElement("a");
       prev.textContent = "←";
-      prev.href = currentPage > 2 ? `?page=${currentPage - 1}` : "/";
+      prev.href = getPageUrl(currentPage - 1);
       prev.setAttribute("aria-label", "Previous gallery page");
       if (currentPage === 1) prev.setAttribute("aria-disabled", "true");
       pagination.appendChild(prev);
@@ -1333,7 +1401,7 @@
       for (let i = startPage; i <= endPage; i++) {
         const btn = document.createElement("a");
         btn.textContent = i;
-        btn.href = i === 1 ? "/" : `?page=${i}`;
+        btn.href = getPageUrl(i);
         btn.setAttribute("aria-label", `Gallery page ${i}`);
         if (i === currentPage) {
           btn.classList.add("active");
@@ -1345,33 +1413,73 @@
       // Next page
       const next = document.createElement("a");
       next.textContent = "→";
-      next.href = currentPage < totalPages ? `?page=${currentPage + 1}` : `?page=${totalPages}`;
+      next.href = getPageUrl(currentPage < totalPages ? currentPage + 1 : totalPages);
       next.setAttribute("aria-label", "Next gallery page");
       if (currentPage === totalPages) next.setAttribute("aria-disabled", "true");
       pagination.appendChild(next);
     }
 
     document.addEventListener("keydown", e => {
-      const totalPages = Math.ceil(imageList.length / itemsPerPage);
+      if (e.target.closest('[role="tab"]')) return;
+      const totalPages = Math.ceil(getFilteredImages().length / itemsPerPage);
       if (e.key === "ArrowRight" && currentPage < totalPages) {
         currentPage++;
-        window.history.pushState({}, "", `?page=${currentPage}`);
+        window.history.pushState({}, "", getPageUrl(currentPage));
         renderGallery();
         updatePageMetadata();
       } else if (e.key === "ArrowLeft" && currentPage > 1) {
         currentPage--;
-        window.history.pushState({}, "", currentPage === 1 ? "/" : `?page=${currentPage}`);
+        window.history.pushState({}, "", getPageUrl(currentPage));
         renderGallery();
         updatePageMetadata();
       }
     });
 
+    filterTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        activeFilter = tab.dataset.filter;
+        currentPage = 1;
+        syncFilterTabs();
+        window.history.pushState({}, "", getPageUrl(currentPage));
+        renderGallery();
+        updatePageMetadata();
+      });
+
+      tab.addEventListener("keydown", e => {
+        let nextIndex;
+        if (e.key === "ArrowRight") nextIndex = (index + 1) % filterTabs.length;
+        else if (e.key === "ArrowLeft") nextIndex = (index - 1 + filterTabs.length) % filterTabs.length;
+        else if (e.key === "Home") nextIndex = 0;
+        else if (e.key === "End") nextIndex = filterTabs.length - 1;
+        else return;
+        e.preventDefault();
+        filterTabs[nextIndex].focus();
+        filterTabs[nextIndex].click();
+      });
+    });
+
+    window.addEventListener("popstate", () => {
+      const params = new URLSearchParams(window.location.search);
+      const requestedFilter = params.get("teacher");
+      activeFilter = filterTabs.some(tab => tab.dataset.filter === requestedFilter) ? requestedFilter : "all";
+      const requestedPage = Number(params.get("page"));
+      const totalPages = Math.max(1, Math.ceil(getFilteredImages().length / itemsPerPage));
+      currentPage = Number.isInteger(requestedPage) && requestedPage >= 1 && requestedPage <= totalPages ? requestedPage : 1;
+      syncFilterTabs();
+      renderGallery();
+      updatePageMetadata();
+    });
+
     window.addEventListener("DOMContentLoaded", () => {
-      const requestedPage = Number(new URLSearchParams(window.location.search).get("page"));
-      const totalPages = Math.ceil(imageList.length / itemsPerPage);
+      const params = new URLSearchParams(window.location.search);
+      const requestedFilter = params.get("teacher");
+      activeFilter = filterTabs.some(tab => tab.dataset.filter === requestedFilter) ? requestedFilter : "all";
+      const requestedPage = Number(params.get("page"));
+      const totalPages = Math.max(1, Math.ceil(getFilteredImages().length / itemsPerPage));
       currentPage = Number.isInteger(requestedPage) && requestedPage >= 1 && requestedPage <= totalPages
         ? requestedPage
         : 1;
+      syncFilterTabs();
       renderGallery();
       updatePageMetadata();
     });
