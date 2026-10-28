@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
   <title>Advaita &amp; Nonduality Quotes - Design and Tees</title>
   <meta name="description" content="Explore Nondualitee’s collection of Advaita and nonduality quote artwork inspired by teachers including Ramana Maharshi and Nisargadatta." />
   <meta property="og:type" content="website" />
@@ -38,9 +38,11 @@
 
     h1 {
       color: #2c3e50;
-      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+      font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
       font-weight: 400;
-      margin-bottom: 0.1em;
+      margin-bottom: 0;
+      font-size: 32px;
+      letter-spacing: -0.05em;
     }
 
     .title-rest {
@@ -49,7 +51,7 @@
 
     .subheading {
       max-width: 600px;
-      margin: 0.25rem auto 1rem;
+      margin: 12px auto 1rem;
       font-weight: 400;
     }
 
@@ -102,12 +104,22 @@
     }
 
     @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
       .subheading {
         max-width: 88%;
       }
 
       .title-rest {
         display: block;
+      }
+    }
+
+    @media (min-width: 601px) and (max-width: 1024px) {
+      h1 {
+        font-size: 32px;
       }
     }
 
