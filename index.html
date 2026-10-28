@@ -59,7 +59,8 @@
       z-index: 10;
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
-      background: #000;
+      background: linear-gradient(120deg, #050505, #0c2c68, #1769ff, #050505);
+      background-size: 250% 250%;
       color: #fff;
       font-size: 0.9rem;
       font-weight: 600;
@@ -67,6 +68,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
+      animation: shop-gradient-shift 5s ease infinite;
     }
 
     .shop-button svg {
@@ -76,8 +78,20 @@
     }
 
     .shop-button:hover {
-      background: #333;
+      filter: brightness(1.18);
       color: #fff;
+    }
+
+    @keyframes shop-gradient-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .shop-button {
+        animation: none;
+      }
     }
 
     .shop-button:focus-visible,
