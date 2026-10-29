@@ -271,6 +271,26 @@
     }
 
     @media (max-width: 600px) {
+      .teacher-filters {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .teacher-filters::-webkit-scrollbar {
+        display: none;
+      }
+
+      .teacher-filters button {
+        flex: 0 0 auto;
+        padding: 0.4rem 0.55rem;
+        font-size: 0.78rem;
+        white-space: nowrap;
+      }
+
       .shop-button {
         top: auto;
         bottom: 16px;
